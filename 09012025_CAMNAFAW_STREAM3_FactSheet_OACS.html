@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factsheet - SRH NEED RESPONSE IN Kumbo</title>
+	<link rel="stylesheet" href="style.css">
+    <style>
+        @media print {
+            body { margin: 0; }
+            .factsheet { page-break-after: avoid; }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .factsheet {
+            width: 210mm;
+            height: 297mm;
+            background: white;
+            margin: 0 auto;
+            padding: 12mm;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 4px solid #00a651;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .header-left {
+            flex: 1;
+        }
+        
+        .header h1 {
+            font-size: 16px;
+            color: #00a651;
+            line-height: 1.2;
+            margin-bottom: 4px;
+        }
+        
+        .header .subtitle {
+            font-size: 9px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .header-right {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .logo-box {
+            text-align: center;
+            font-size: 8px;
+            color: #666;
+        }
+        
+        .logo-placeholder {
+            width: 60px;
+            height: 50px;
+            background: #f0f0f0;
+            border: 2px solid #00a651;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: bold;
+            color: #00a651;
+            margin-bottom: 3px;
+        }
+        
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #00a651 0%, #00c853 100%);
+            padding: 10px;
+            border-radius: 6px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            color: white;
+        }
+        
+        .stat-number {
+            font-size: 20px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 2px;
+        }
+        
+        .stat-label {
+            font-size: 8px;
+            opacity: 0.95;
+            line-height: 1.2;
+        }
+        
+        .section {
+            margin-bottom: 10px;
+        }
+        
+        .section-title {
+            font-size: 11px;
+            font-weight: bold;
+            color: #00a651;
+            margin-bottom: 5px;
+            padding-left: 8px;
+            border-left: 4px solid #ff6b35;
+        }
+        
+        .context {
+            background: #f8f9fa;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 8.5px;
+            line-height: 1.4;
+            text-align: justify;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .actions-box, .impact-box {
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 8px;
+        }
+        
+        .actions-box {
+            border-left: 4px solid #00a651;
+        }
+        
+        .impact-box {
+            border-left: 4px solid #ff6b35;
+        }
+        
+        .box-title {
+            font-size: 10px;
+            font-weight: bold;
+            color: #00a651;
+            margin-bottom: 6px;
+        }
+        
+        .action-item {
+            font-size: 8px;
+            margin-bottom: 4px;
+            padding-left: 12px;
+            position: relative;
+            line-height: 1.3;
+        }
+        
+        .action-item:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00a651;
+            font-weight: bold;
+        }
+        
+        .impact-metric {
+            background: linear-gradient(90deg, #fff 0%, #fff5e6 100%);
+            padding: 5px 6px;
+            margin-bottom: 5px;
+            border-radius: 3px;
+            font-size: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .impact-number {
+            font-size: 14px;
+            font-weight: bold;
+            color: #ff6b35;
+        }
+        
+        .lessons-box {
+            background: #e8f5e9;
+            padding: 8px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            border-left: 3px solid #00a651;
+        }
+        
+        .lesson-item {
+            font-size: 8px;
+            margin-bottom: 5px;
+            padding-left: 16px;
+            position: relative;
+            line-height: 1.3;
+        }
+        
+        .lesson-item:before {
+            content: "🔑";
+            position: absolute;
+            left: 0;
+            font-size: 10px;
+        }
+        
+        .challenges {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+            margin-bottom: 8px;
+        }
+        
+        .challenge-item {
+            background: #fff3cd;
+            padding: 5px 6px;
+            border-radius: 3px;
+            font-size: 7.5px;
+            border-left: 3px solid #ffc107;
+            line-height: 1.2;
+        }
+        
+        .funding-call {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+        }
+        
+        .funding-call h3 {
+            font-size: 11px;
+            margin-bottom: 5px;
+        }
+        
+        .funding-text {
+            font-size: 8px;
+            line-height: 1.4;
+            margin-bottom: 6px;
+        }
+        
+        .funding-needs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            margin-top: 6px;
+        }
+        
+        .need-item {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 6px;
+            border-radius: 3px;
+            font-size: 7.5px;
+            line-height: 1.2;
+        }
+        
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 6px;
+            border-top: 2px solid #e0e0e0;
+            font-size: 7px;
+            color: #666;
+        }
+        
+        .goal-highlight {
+            background: rgba(255,255,255,0.25);
+            padding: 5px;
+            border-radius: 3px;
+            margin-top: 5px;
+            font-size: 8px;
+            font-weight: bold;
+        }
+
+        .meta-info {
+            font-size: 7.5px;
+            color: #666;
+            margin-top: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="factsheet">
+        <div class="header">
+            <div class="header-left">
+                <h1>Répondre aux Besoins Critiques en Santé Sexuelle et Reproductive des Communautés touchées par la crise humanitaire à Kumbo, Cameroun</h1>
+                <div class="meta-info">
+                    <strong>Période:</strong> Août - Décembre 2025 | 
+                    <strong>Zone:</strong> District de Santé de Kumbo Est, Régions Nord-Ouest
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="logo-box">
+				 <img src="images/ippf.jpg" alt="IPPF" style="width:60px; height:auto;"> 
+                </div>
+                <div class="logo-box">
+				<img src="images/camnafaw.png" alt="CAMNAFAW" style="width:60px; height:auto;"> 
+                </div>
+            </div>
+        </div>
+        
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-number">8 795</span>
+                <span class="stat-label">Services SR offerts</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">248</span>
+                <span class="stat-label">Accouchements assistés par un prestataire</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">1 078</span>
+                <span class="stat-label">Bénéficiaires d'accompagnement psychosocial</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">634</span>
+                <span class="stat-label">PVVIH Suivis</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">LA CRISE HUMANITAIRE</h2>
+            <div class="context">
+                Depuis les manifestations pacifiques de 2016 par les enseignants et avocats anglophones dénonçant leur marginalisation, les régions du Nord-Ouest et du Sud-Ouest du Cameroun sont plongées dans un conflit asymétrique entre forces gouvernementales et groupes séparatistes. Plus de 1,1 million de personnes sont déplacées, dont 334 000 dans les régions anglophones. À Kumbo Est (population: 150 817 habitants), la crise a particulièrement accru la vulnérabilité des femmes et des filles : structures sanitaires détruites ou fermées, fuite du personnel médical, exposition dramatique aux violences sexuelles et basées sur le genre, et grossesses précoces atteignant 60,75%. Les confinements imposés par les groupes armés (rentrée scolaire en septembre, élections en octobre-novembre, période des fêtes en décembre marquée par des enlèvements contre rançon) ont paralysé l'accès aux services essentiels. L'effondrement du système éducatif (41% des écoles fermées, 160+ enseignants tués) a laissé des milliers d'adolescentes sans cadre protecteur, multipliant leur exposition à l'exploitation et aux mariages précoces. Face a cette situation, l'IPPF a mis a la disposition de la CAMNAFAW un financement Stream 3 pour assurer la continuité des services offerts dans les formations sanitaires et en communauté.
+            </div>
+        </div>
+        
+        <div class="two-column">
+            <div class="photos-grid">
+                <div class="box-title"></div>
+                <figure class="photo-card">
+	  <img src="images/camnafaw2.jpg" alt="Offre de services" width="400" height="300">
+      <figcaption></figcaption>
+    </figure>
+            </div>
+            
+            <div class="impact-box">
+                <div class="box-title">RÉALISATIONS MAJEURES</div>
+                <div class="impact-metric">
+                    <span>Formations sanitaires soutenues pour la continuité de l'offre de services</span>
+                    <span class="impact-number">6</span>
+                </div>
+                <div class="impact-metric">
+                    <span>Personnes ayant accès aux services SSR (4 758 en établissement + 4 037 via sensibilisation))</span>
+                    <span class="impact-number">8795</span>
+                </div>
+                <div class="impact-metric">
+                    <span>Kits d'accouchement distribués à des adolescentes enceintes vulnérables (15-19 ans)</span>
+                    <span class="impact-number">60</span>
+                </div>
+                <div class="impact-metric">
+                    <span>Contraceptifs distribués (377 Sayana Press, 44 Jadelle, 46 Implanon, 113 autres méthodes)</span>
+                    <span class="impact-number">3610</span>
+                </div>
+                <div class="impact-metric">
+                    <span>202 personnes dépistées pour le VIH, 318 dépistées pour IST (30 traitées)</span>
+                    <span class="impact-number">520</span>
+                </div>
+                <div class="impact-metric">
+                    <span>Personnes sensibilisées (campagnes on-site et digitales)</span>
+                    <span class="impact-number">8203</span>
+                </div>
+                <div class="impact-metric">
+                    <span>Survivantes de VBG prises en charge (soins médicaux + psychosociaux)</span>
+                    <span class="impact-number">38</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">LEÇONS CLÉS & INNOVATIONS</h2>
+            <div class="lessons-box">
+                <div class="lesson-item"><strong>Approche mobile adaptée au conflit :</strong> Les équipes itinérantes et cliniques mobiles ont maintenu l'accès aux services durant les confinements et dans les zones sous contrôle des groupes armés, en négociant l'accès avec les leaders locaux et en s'adaptant aux fenêtres humanitaires.</div>
+                <div class="lesson-item"><strong>Partenariat stratégique avec le District de Santé :</strong> La collaboration avec Kumbo East Health District et 6 établissements de santé (Mbam IHC, Shisong Catholic Hospital, Dzeng IHC, SOP CMA, Jakiri CMA, Jakiri Urban IHC) a assuré la continuité des services et le rapportage régulier malgré les défis sécuritaires.</div>
+                <div class="lesson-item"><strong>Réponse intégrée SSR-VBG-VIH :</strong> L'approche holistique combinant soins de santé, protection, soutien psychosocial et sensibilisation a permis de briser le cycle de vulnérabilité, avec un taux de satisfaction élevé des bénéficiaires.</div>
+                <div class="lesson-item"><strong>Mobilisation communautaire renforcée :</strong> L'engagement de l'Organisation pour l'Autonomisation et le Développement des Femmes (OWED) et des agents de santé communautaires a été crucial pour atteindre les populations difficiles d'accès et déconstruire les barrières socioculturelles.</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">DÉFIS PERSISTANTS</h2>
+            <div class="challenges">
+                <div class="challenge-item">⚠️ <strong>Insécurité chronique :</strong> Confinements, barrages routiers, enlèvements (3 agents du district kidnappés en décembre) limitant l'accès aux communautés</div>
+                <div class="challenge-item">⚠️ <strong>Pénurie de personnel qualifié :</strong> Fuite des sages-femmes/infirmières, capacité limitée en prise en charge VBG et services jeunes</div>
+                <div class="challenge-item">⚠️ <strong>Barrières financières :</strong> Coûts du dépistage VIH/IST et soins spécialisés inaccessibles aux populations vulnérables</div>
+                <div class="challenge-item">⚠️ <strong>Stigmatisation persistante :</strong> Normes culturelles/religieuses freinant l'utilisation des services SSR, particulièrement pour les jeunes</div>
+                <div class="challenge-item">⚠️ <strong>Ruptures de stocks :</strong> Kits de dépistage, médicaments essentiels, préservatifs et kits d'accouchement insuffisants face à la demande</div>
+                <div class="challenge-item">⚠️ <strong>Demande non satisfaite :</strong> Besoins largement supérieurs aux capacités actuelles (préservatifs, kits d'accouchement, matériel IEC)</div>
+            </div>
+        </div>
+        
+        <div class="funding-call">
+            <h3>🎯 EXTENSION & CONSOLIDATION 2026-2027</h3>
+            <div class="funding-text">
+                La forte demande observée (148% de l'objectif atteint) et les besoins non satisfaits nécessitent une expansion urgente. Un financement supplémentaire permettra de :
+            </div>
+            <div class="funding-needs">
+                <div class="need-item">• Étendre à 15 centres de santé avec équipements obstétriques et stocks sécurisés</div>
+                <div class="need-item">• Former 80 sages-femmes/infirmières en soins d'urgence obstétricale et prise en charge VBG</div>
+                <div class="need-item">• Tripler les stocks de préservatifs et assurer 100% de couverture en kits d'accouchement</div>
+                <div class="need-item">• Gratuité du dépistage VIH/IST via fonds d'assistance dédiés</div>
+                <div class="need-item">• Créer 8 espaces sûrs pour adolescentes avec formation professionnelle</div>
+                <div class="need-item">• Atteindre 35 000 personnes via campagnes intensifiées et cliniques mobiles renforcées</div>
+            </div>
+            <div class="goal-highlight">
+                📊 OBJECTIF 2026-2027 : Réduire de 35% les grossesses précoces | Doubler l'accès aux soins SSR | Couvrir 12 districts prioritaires
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div>
+                <strong>Contact CAMNAFAW :</strong> camnafaw@yahoo.fr | +237 620197 227| www.camnafaw-cm.org
+            </div>
+            <div>
+                <strong>Partenaires de mise en oeuvre :</strong> Kumbo East Health District | OWED | MINPROFF
+            </div>
+        </div>
+    </div>
+</body>
+</html>
